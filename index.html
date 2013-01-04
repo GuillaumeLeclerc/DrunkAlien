@@ -1,0 +1,31 @@
+﻿<!DOCTYPE HTML>
+<html>
+  <head>
+      <title>Bowl Game</title>
+              <meta charset="UTF-8" />
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <SCRIPT  SRC="game.js"> </SCRIPT>
+    <script>
+        var currentGame;
+        window.onload = function() {
+            currentGame = new Game(document.getElementById("myCanvas"), "Bowling For Balls");
+            currentGame.BindInputs();
+            currentGame.Run();
+        };
+		
+		function restart()
+		{
+			if(currentGame.gameOver==true)
+			{
+			currentGame = new Game(document.getElementById("myCanvas"), "Bowling For Balls");
+            currentGame.BindInputs();
+            currentGame.Run();
+			}
+		}
+
+    </script>
+  </head>
+  <body style="background:white">
+    <canvas id="myCanvas" style="margin:auto;" onclick="restart()" width="800" height="600"></canvas>
+  </body>
+</html>
